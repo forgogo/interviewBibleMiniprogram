@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+<view class="top">
+<view class="top_left">
+
+
+</view>
+<view class="top_middle"></view>
+<view class="top_right"></view>
+</view>
+</view>
