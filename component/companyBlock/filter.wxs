@@ -1,0 +1,34 @@
+var formatDate = function (timestamp,option) {
+  var date = getDate(parseInt(timestamp*1000));
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+  var hour = function(){
+    if (date.getHours()<10){  //补‘0’
+      return '0' + date.getHours()
+    }
+    return date.getHours();
+  }
+  var minute = function () {
+    if (date.getMinutes() < 10) {
+      return '0' + date.getMinutes()
+    }
+    return date.getMinutes();
+  }
+  var second = function () {
+    if (date.getSeconds() < 10) {
+      return '0' + date.getSeconds()
+    }
+    return date.getSeconds();
+  }
+ 
+  if (option=='notime'){  //不需要时间
+    return year + '-' + month + '-' + day;
+  }
+ 
+  return  month + '-' + day + ' ' + hour() + ':' + minute() ;
+}
+ 
+module.exports = {
+  formatDate: formatDate,
+};

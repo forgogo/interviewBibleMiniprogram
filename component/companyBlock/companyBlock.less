@@ -1,0 +1,149 @@
+@import '../../style/iconfont.wxss';
+
+.infoListItem {
+    margin: 10rpx 12rpx;
+    padding: 5rpx 0;
+    background-color: #fff;
+    ;
+
+    .userInfo {
+        display: flex;
+        align-items: center;
+
+        .userIcon {
+            width: 65rpx;
+            height: 65rpx;
+            border-radius: 50%;
+        }
+
+        .userInfoRight {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding-left: 20rpx;
+
+            .userName {
+                font-size: 28rpx;
+            }
+
+            .itemTime {font-size: 23rpx;}
+        }
+
+    }
+
+    .title {
+        text-align: left;
+        padding: 3rpx 5rpx;
+
+        p {
+            font-size: 33rpx;
+            color: #1a8dfd;
+            font-weight: 600;
+        }
+    }
+
+    .content {
+        padding: 3rpx 5rpx;
+
+        .contentDetail {
+            text-align: left;
+            font-size: 28rpx;
+            color: #333;
+        }
+
+        .more {
+            font-size: 24rpx;
+            // float: right;
+            text-align: right;
+            color: #ff890ae0;
+
+        }
+
+        .conpanyPic {
+            overflow: hidden;
+            flex-wrap: wrap;
+            display: flex;
+
+            .conpanyPicItem {
+                width: 33.33%;
+                height: 15vh;
+                overflow: hidden;
+
+                image {
+                    height: 100%;
+                    box-sizing: border-box;
+                    width: 100%;
+                    object-fit: cover;
+                    padding: 5px;
+                }
+
+            }
+        }
+    }
+
+    .itemTime {
+
+        font-size: 25rpx;
+        color: #808080;
+
+        view {}
+    }
+
+    .handle {
+        height: 35rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 25rpx !important;
+        color: #a4a5a9;
+        .handleLeft {
+            flex: 1;
+            display: flex;
+            align-items: center;
+
+            .handleItem {
+                padding-left: 50rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .handleItemNum {
+                padding-left: 15rpx;
+            }
+
+            .iconfont {
+                font-size: 27rpx !important;
+                padding-bottom: 17rpx;
+
+            }
+
+        }
+
+        .handleRight {
+            .handleItem {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .handleItemNum {
+                padding-left: 15rpx;
+            }
+            .iconfont {
+                font-size: 27rpx !important;
+                padding-bottom: 17rpx;
+
+            }
+        }
+
+    }
+}
+
+.showTwo {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}

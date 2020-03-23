@@ -1,11 +1,26 @@
 <!--index.wxml-->
 <view class="container">
-<view class="top">
-<view class="top_left">
+  <!-- 顶部搜索栏 -->
+  <view class="top">
+    <view class="top_left">
+      <mp-icon icon="pencil" color="#1989fa" size="{{25}}" bindtap="handelPost"></mp-icon>
+    </view>
+    <view class="top_middle">
+      <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
+    <view class="top_right">
+      <mp-icon icon="search" color="#1989fa" size="{{25}}" cancel='false'></mp-icon>
+    </view>
+  </view>
+  <!-- 顶部搜索栏结束 -->
 
 
-</view>
-<view class="top_middle"></view>
-<view class="top_right"></view>
-</view>
+  <!-- 内容栏 -->
+  <view class="company">
+  <my-item list="{{item}}" wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="*this"/>
+   
+
+  </view>
+
+  <!-- 内容栏结束 -->
 </view>

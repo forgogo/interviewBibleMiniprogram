@@ -1,0 +1,28 @@
+<mp-form id="form" rules="{{rules}}" models="{{formData}}">
+  <mp-cells title="" footer="以上观点（或者以上言论）不代表本台立场">
+    <mp-cell prop="title" title="公司名称" ext-class="">
+      <input bindinput="formInputChange" data-field="title" class="weui-input" placeholder="请输入" focus="true" bindblur="titleBlur"/>
+    </mp-cell>
+
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" bindinput="charChange"/>
+          <view class="weui-textarea-counter">0/200</view>
+        </view>
+      </view>
+    </view>
+
+        <view class="page__bd">
+        <mp-cells>
+            <mp-cell>
+                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="图片上传" tips="图片上传提示"></mp-uploader>
+            </mp-cell>
+        </mp-cells>
+    </view>
+
+<view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="submitForm">提交</button>
+        </view>
+  </mp-cells>
+</mp-form>

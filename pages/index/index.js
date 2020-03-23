@@ -1,54 +1,78 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import { request } from "../../request/index.js"
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    list:[],
+    total:'',
+    page:1
+
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  handelPost(){
+wx.navigateTo({
+  url: '/pages/Postcompany/index',
+})
   },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+  // 调用封装的方法，获取轮播图数据
+  async getSwiperdata(last_id) {
+    // formdata.append("page", 1);
+   
+    const list = await request({
+
+      url: '/job/get-job-record',
+      method: 'post',
+      data: {
+        page:this.data.page,
+        last_id
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+
     })
+    // console.log(list)
+    this.setData({
+      total:list.data.data.count
+    })
+    if (this.data.list.length == 0) {
+      this.data.list = list.data.data.res;
+    } else {
+      list.data.data.res.forEach(item => {
+        this.data.list.push(item);
+        
+      });
+    }
+    this.setData({
+      list: this.data.list
+    })
+  
+    // console.log(this.data.list)
+  }
+  ,
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad() {
+    this.getSwiperdata();
+  },
+  //下拉刷新
+  onPullDownRefresh(){
+    this.setData({
+      list:[]
+    })
+    this.getSwiperdata();
+    wx.stopPullDownRefresh();
+  },
+  //页面上拉触底加载更多
+  onReachBottom(){
+    if (Math.ceil(this.data.total / 10) >= 1) {
+      let last_id = this.data.list[this.data.list.length - 1].id;
+      this.setData({
+        page:this.data.page++
+      })
+      this.getSwiperdata(last_id);
+      // this.loading = false;
+    } else {
+      // this.finished = true;
+      cosole.log('没了')
+    }
   }
 })

@@ -1,0 +1,69 @@
+<view class="userInfoWrap">
+  <view class="unseImg">
+    <image class="userBg" src="{{userInfo.avatarUrl }}"></image>
+    <view class="userInfo">
+      <image class="userIcon" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4034879928,1229713244&fm=26&gp=0.jpg'}}"></image>
+      <view class="userName {{userInfo.nickName? '':'userNameNull'}}">{{userInfo.nickName? userInfo.nickName :'登录/注册'}}</view>
+      <block wx:if="{{userInfo.length===0}}">
+        <button class="userBtn" open-type="getUserInfo" bindgetuserinfo="handelLogin"></button>
+      </block>
+    </view>
+  </view>
+</view>
+<view class="userTools">
+  <view class="userToolsItem">
+    <view class="userToolsItemIcon ">
+      <icon class="iconfont icon-dianzan"></icon>
+    </view>
+    <view class="userToolsItemName">我的点赞</view>
+  </view>
+  <view class="userToolsItem">
+   <navigator class="userToolsItem" url="/pages/order/index?type=2">
+    <view class="userToolsItemIcon ">
+      <icon class="iconfont icon-fabiaolunwen"></icon>
+    </view>
+    <view class="userToolsItemName">我的收藏</view>
+     </navigator>
+  </view>
+  <view class="userToolsItem">
+    <view class="userToolsItemIcon ">
+      <icon class="iconfont icon-wodetiezi"></icon>
+    </view>
+    <view class="userToolsItemName">我的发表</view>
+  </view>
+  <navigator class="userToolsItem" url="/pages/order/index?type=1">
+ 
+    <view class="userToolsItemIcon ">
+      <icon class="iconfont icon-pinglun"></icon>
+    </view>
+    <view class="userToolsItemName">我的评论</view>
+  </navigator>
+</view>
+<view class="userSundry">
+  <view class="userSundryItem">
+    <view class="userSundryItemLeft">
+      <view class="userSundryItemIcon">
+        <icon class="iconfont icon-kefu"></icon>
+      </view>
+      <view class="userToolsItemName">联系客服</view>
+    </view>
+    <view class="userSundryItemRight">400-123-123</view>
+  </view>
+  <view class="userSundryItem">
+    <view class="userSundryItemLeft">
+      <view class="userSundryItemIcon">
+        <icon class="iconfont icon-yijian"></icon>
+      </view>
+      <view class="userToolsItemName">意见反馈</view>
+    </view>
+    <view class="userSundryItemRight"></view>
+  </view>  <view class="userSundryItem">
+    <view class="userSundryItemLeft">
+      <view class="userSundryItemIcon">
+        <icon class="iconfont icon-banben"></icon>
+      </view>
+      <view class="userToolsItemName">当前版本</view>
+    </view>
+    <view class="userSundryItemRight">v1.0.0</view>
+  </view>
+</view>
