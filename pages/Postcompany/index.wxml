@@ -1,28 +1,33 @@
 <mp-form id="form" rules="{{rules}}" models="{{formData}}">
-  <mp-cells title="" footer="以上观点（或者以上言论）不代表本台立场">
+  <mp-cells title="">
     <mp-cell prop="title" title="公司名称" ext-class="">
-      <input bindinput="formInputChange" data-field="title" class="weui-input" placeholder="请输入" focus="true" bindblur="titleBlur"/>
+      <input bindinput="formInputChange" data-field="title" class="weui-input" placeholder="请输入" focus="true" bindblur="titleBlur" bindfocus="onbindfocus" />
     </mp-cell>
 
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell">
         <view class="weui-cell__bd">
-          <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" bindinput="charChange"/>
+          <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em;z-index:0;" bindinput="charChange" />
           <view class="weui-textarea-counter">0/200</view>
         </view>
       </view>
     </view>
-
-        <view class="page__bd">
+    <view class="page">
+  
+      <view class="page__bd">
         <mp-cells>
-            <mp-cell>
-                <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="图片上传" tips="图片上传提示"></mp-uploader>
-            </mp-cell>
+          <mp-cell>
+            <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" ></mp-uploader>
+          </mp-cell>
         </mp-cells>
+      </view>
     </view>
-
-<view class="weui-btn-area">
-            <button class="weui-btn" type="primary" bindtap="submitForm">提交</button>
-        </view>
   </mp-cells>
+  <view class="postBottom" style="bottom:{{bottom}}px">
+    <view class="uploadPic">
+      <mp-icon icon="album" color="black" size="{{25}}"></mp-icon>
+
+    </view>
+    <view class="post">发表</view>
+  </view>
 </mp-form>

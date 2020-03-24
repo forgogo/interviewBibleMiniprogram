@@ -80,8 +80,8 @@
 }
 .infoListItem .title p {
   font-size: 33rpx;
-  color: #1a8dfd;
-  font-weight: 600;
+  color: #030303;
+  font-weight: 500;
 }
 .infoListItem .content {
   padding: 3rpx 5rpx;
@@ -89,7 +89,7 @@
 .infoListItem .content .contentDetail {
   text-align: left;
   font-size: 28rpx;
-  color: #333;
+  color: #4e5459;
 }
 .infoListItem .content .more {
   font-size: 24rpx;

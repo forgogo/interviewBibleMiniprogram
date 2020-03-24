@@ -11,7 +11,10 @@ Page({
     formData: {
 
     },
-    ules: [{
+    files: [{
+      url: 'http://mmbiz.qpic.cn/mmbiz_png/VUIF3v9blLsicfV8ysC76e9fZzWgy8YJ2bQO58p43Lib8ncGXmuyibLY7O3hia8sWv25KCibQb7MbJW3Q7xibNzfRN7A/0',
+    }],
+    rules: [{
       name: 'title',
       rules: { required: true, message: '必填写项' },
     }]
@@ -20,30 +23,50 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function (options) {
+    this.setData({
+      selectFile: this.selectFile.bind(this),
+      uplaodFile: this.uplaodFile.bind(this)
+    })
   },
-  titleBlur(){
-        this.selectComponent('#form').validate((valid, errors) => {
-      console.log('valid', valid, errors)
+
+  //获取焦点
+  onbindfocus(e) {
+    
+    this.setData({
+      bottom: e.detail.height,
+    })
+  },
+  titleBlur() {
+    this.setData({
+      bottom: '0px',
+    })
+    this.selectComponent('#form').validate((valid, errors) => {
+      // console.log('valid', valid, errors)
       if (!valid) {
         const firstError = Object.keys(errors)
+        
         if (firstError.length) {
           this.setData({
             error: errors[firstError[0]].message
           })
 
         }
-      } else {
         wx.showToast({
-          title: '校验通过'
+          icon:'none',
+          title: '公司名称不能为空'
         })
       }
+      //  else {
+      //   wx.showToast({
+      //     title: '校验通过'
+      //   })
+      // }
     })
   },
   formInputChange(e) {
 
-  
+
     const {
       field
     } = e.currentTarget.dataset
@@ -79,5 +102,25 @@ Page({
       data: this.data.formData
     })
     console.log(res)
+  },
+//上传图片   
+  selectFile(files) {
+    console.log('files', files)
+    // 返回false可以阻止某次文件上传
+  },
+ uplaodFile(files) {
+        console.log('upload files', files)
+        // 文件上传的函数，返回一个promise
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                reject('some error')
+            }, 1000)
+        })
+    },
+  uploadError(e) {
+    console.log('upload error', e.detail)
+  },
+  uploadSuccess(e) {
+    console.log('upload success', e.detail)
   }
 })
