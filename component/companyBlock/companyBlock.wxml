@@ -20,24 +20,33 @@
 
     <view class="more" bindtap="onShoweded" wx:if="{{list.content.length>46}}"> {{isShow?'收起':'更多'}}</view>
   </view>
-<view class="handle">
-<view class="handleLeft">
-<view class="handleItem" style="padding:0"> <icon class="iconfont icon-zhuanfa"></icon><view class="handleItemNum">999</view></view>
-<view class="handleItem"><icon class="iconfont icon-pinglun"></icon><view class="handleItemNum">999</view></view>
-<view class="handleItem"><icon class="iconfont icon-icon-test"></icon><view class="handleItemNum">999</view></view>
+  <view class="handle">
+    <view class="handleLeft">
+      <view class="handleItem" style="padding:0">
+        <icon class="iconfont icon-zhuanfa"></icon>
+        <view class="handleItemNum">999</view>
+      </view>
+      <view class="handleItem">
+        <icon class="iconfont icon-pinglun"></icon>
+        <view class="handleItemNum">999</view>
+      </view>
+      <view class="handleItem">
+        <icon class="iconfont icon-icon-test"></icon>
+        <view class="handleItemNum">999</view>
+      </view>
 
 
-</view>
-<view class="handleRight">
-<view class="handleItem">
-<icon class="iconfont icon-fenxiang2"></icon>
-<view class="handleItemNum">分享</view>
- </view>
-</view>
-</view>
+    </view>
+    <view class="handleRight">
+      <view class="handleItem">
+        <icon class="iconfont icon-fenxiang2"></icon>
+        <view class="handleItemNum">分享</view>
+      </view>
+    </view>
+  </view>
 </view>
 <view class="infoListItem" wx:else>
- <view class="userInfo">
+  <view class="userInfo">
     <image class="userIcon" src="https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epicgibGa8ks5ib8juUjicSdWUibUE5PQCDSPBgWTKf6wj094oHWLPmGEsVXlVV4Qy5XZIJ76XN2yBYRVQ/132" role="img"></image>
     <view class="userInfoRight">
       <view class="userName">Gogo</view>
@@ -53,7 +62,7 @@
   </view>
   <view class="content">
     <!-- <view class="{{isShow?'contentDetail':'contentDetail showTwo'}}">{{list.content}}</view> -->
-      <rich-text nodes="{{list.content}}" class="{{isShow?'contentDetail':'contentDetail showTwo'}}"></rich-text>
+    <rich-text nodes="{{list.content}}" class="{{isShow?'contentDetail':'contentDetail showTwo'}}"></rich-text>
     <view class="conpanyPic">
       <view class="conpanyPicItem" wx:for="{{list.img_data}}" wx:key='*this' bindtap="imgPreview" data-urls="{{list.img_data}}" data-index="{{index}}">
         <image src="http://img.rosssss.top/{{item}}"></image>
@@ -65,5 +74,28 @@
 
     <view class="more" bindtap="onShoweded" wx:if="{{list.content.length>46}}"> {{isShow?'收起':'更多'}}</view>
   </view>
+ <view class="handle">
+    <view class="handleLeft">
+      <view class="handleItem" style="padding:0">
+        <icon class="iconfont icon-zhuanfa"></icon>
+        <view class="handleItemNum">999</view>
+      </view>
+      <view class="handleItem">
+        <icon class="iconfont icon-pinglun"></icon>
+        <view class="handleItemNum">999</view>
+      </view>
+      <view class="handleItem">
+        <icon class="iconfont icon-icon-test"></icon>
+        <view class="handleItemNum">999</view>
+      </view>
 
+
+    </view>
+    <view class="handleRight">
+      <view class="handleItem">
+        <icon class="iconfont icon-fenxiang2"></icon>
+        <view class="handleItemNum">分享</view>
+      </view>
+    </view>
+  </view>
 </view>

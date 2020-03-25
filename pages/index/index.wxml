@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <!-- 顶部搜索栏 -->
-  <view class="top">
+  <!-- <view class="top">
     <view class="top_left">
       <mp-icon icon="pencil" color="#1989fa" size="{{25}}" bindtap="handelPost"></mp-icon>
     </view>
@@ -11,7 +11,7 @@
     <view class="top_right">
       <mp-icon icon="search" color="#1989fa" size="{{25}}" cancel='false'></mp-icon>
     </view>
-  </view>
+  </view> -->
   <!-- 顶部搜索栏结束 -->
 
 
