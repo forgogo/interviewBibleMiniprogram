@@ -8,7 +8,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#07c160",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
@@ -17,13 +17,11 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
         "iconPath": "assets/icon/home.png",
         "selectedIconPath": "assets/icon/home-o.png"
       },
       {
         "pagePath": "pages/login/login",
-        "text": "我的",
         "iconPath": "assets/icon/my.png",
         "selectedIconPath": "assets/icon/my-o.png"
       }
